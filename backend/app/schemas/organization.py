@@ -4,6 +4,7 @@ Pydantic v2 schemas for Organization and Role serialization.
 import uuid
 from datetime import datetime
 from typing import List, Optional
+
 from pydantic import BaseModel, ConfigDict, Field
 
 

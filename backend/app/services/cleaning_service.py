@@ -2,8 +2,8 @@
 Business logic service for Data Cleaning, Imputation & Feature Engineering Studio.
 """
 import os
-from typing import Any, Dict, List, Optional, Sequence
 import uuid
+from typing import Any, Dict, List, Optional, Sequence
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -159,7 +159,7 @@ class CleaningService:
                     {
                         "id": f"rec_{col_name}_drop_constant",
                         "title": f"Drop Constant Column '{col_name}'",
-                        "reason": f"Column has only 1 unique value across all rows and provides zero analytical variance.",
+                        "reason": "Column has only 1 unique value across all rows and provides zero analytical variance.",
                         "severity": "INFO",
                         "step": {
                             "type": "DROP_COLUMN",

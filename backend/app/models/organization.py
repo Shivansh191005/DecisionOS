@@ -3,6 +3,7 @@ Organization, Role, and RBAC mapping database models for multi-tenant DecisionOS
 """
 import uuid
 from typing import Any, Dict, List, Optional
+
 from sqlalchemy import Boolean, ForeignKey, String
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship

@@ -2,7 +2,9 @@
 Pydantic v2 schemas for Module 7: Explainable AI & Driver Trees (Causal Attribution Engine & Root Cause Trees).
 """
 from __future__ import annotations
+
 from typing import Any, Dict, List, Optional
+
 from pydantic import BaseModel, Field
 
 

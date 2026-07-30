@@ -3,6 +3,7 @@ Workspace repository for querying workspaces, member assignments, and activity l
 """
 import uuid
 from typing import Any, Dict, Optional, Sequence
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload

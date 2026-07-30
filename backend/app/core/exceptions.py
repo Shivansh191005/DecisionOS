@@ -2,6 +2,7 @@
 Custom domain exceptions and HTTP error handlers for DecisionOS API.
 """
 from typing import Any, Optional
+
 from fastapi import HTTPException, status
 
 

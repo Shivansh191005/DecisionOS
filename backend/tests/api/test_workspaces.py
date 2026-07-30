@@ -1,8 +1,8 @@
 """
 Integration tests for organizations and workspaces endpoints (/api/v1/organizations & /api/v1/workspaces).
 """
-import pytest
 import httpx
+import pytest
 from fastapi import status
 
 

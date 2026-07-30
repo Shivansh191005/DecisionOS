@@ -1,10 +1,10 @@
 """
 Machine learning telemetry and latency tracking recorder for DecisionOS.
 """
+import logging
 import time
 from contextlib import contextmanager
 from typing import Any, Dict, Generator
-import logging
 
 logger = logging.getLogger("decisionos.ml.telemetry")
 

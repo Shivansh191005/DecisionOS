@@ -1,8 +1,8 @@
 """
 Business logic service for Exploratory Data Analysis (EDA) & Auto-Insight Generator.
 """
-from typing import Any, Dict, List, Optional
 import uuid
+from typing import Any, Dict, List, Optional
 
 from sqlalchemy.ext.asyncio import AsyncSession
 

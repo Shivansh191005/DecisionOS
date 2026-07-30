@@ -1,14 +1,14 @@
 """
 SQLAlchemy 2.0 Async model representing a saved Natural Language Question & SQL query bookmark.
 """
-from typing import Optional
 import uuid
+from typing import Optional
 
 from sqlalchemy import ForeignKey, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import UUIDModel, TimestampMixin
+from app.db.base import TimestampMixin, UUIDModel
 
 
 class NLQBookmark(UUIDModel, TimestampMixin):

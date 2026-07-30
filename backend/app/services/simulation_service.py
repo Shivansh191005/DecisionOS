@@ -1,8 +1,8 @@
 """
 Business logic service for What-If Scenario Simulation & Financial Impact Calculator.
 """
-from typing import Any, Dict, List, Optional
 import uuid
+from typing import Any, Dict, List, Optional
 
 from sqlalchemy.ext.asyncio import AsyncSession
 

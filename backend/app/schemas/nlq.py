@@ -1,9 +1,9 @@
 """
 Pydantic v2 schemas for Module 6: NLQ-to-SQL (Natural Language to SQL Engine & AI Data Assistant).
 """
+import uuid
 from datetime import datetime
 from typing import Any, Dict, List
-import uuid
 
 from pydantic import BaseModel, ConfigDict, Field
 

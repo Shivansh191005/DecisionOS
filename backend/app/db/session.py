@@ -3,13 +3,14 @@ SQLAlchemy 2.0 Async engine and AsyncSession factory for FastAPI dependency inje
 Supports both PostgreSQL (production/Docker) and SQLite (local dev/testing).
 """
 from typing import AsyncGenerator
+
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.ext.asyncio import (
     AsyncSession,
     async_sessionmaker,
     create_async_engine,
 )
 from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.dialects.postgresql import JSONB, UUID
 
 from app.core.config import settings
 

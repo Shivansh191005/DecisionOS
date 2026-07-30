@@ -28,7 +28,7 @@ class LLMService:
         Returns the generated content text or None on failure.
         """
         api_key = settings.GROQ_API_KEY
-        if not api_key:
+        if not api_key or settings.ENVIRONMENT == "test":
             return None
 
         try:

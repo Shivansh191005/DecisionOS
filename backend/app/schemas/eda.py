@@ -2,6 +2,7 @@
 Pydantic v2 schemas for Exploratory Data Analysis (EDA) & Auto-Insight Generator.
 """
 from typing import Any, Dict, List, Optional
+
 from pydantic import BaseModel, Field
 
 

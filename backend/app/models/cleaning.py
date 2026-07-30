@@ -1,14 +1,14 @@
 """
 SQLAlchemy 2.0 Async model representing a non-destructive data cleaning & transformation recipe.
 """
-from typing import Any, Dict, List, Optional
 import uuid
+from typing import Any, Dict, List, Optional
 
 from sqlalchemy import ForeignKey, String, Text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import UUIDModel, TimestampMixin
+from app.db.base import TimestampMixin, UUIDModel
 
 
 class CleaningRecipe(UUIDModel, TimestampMixin):

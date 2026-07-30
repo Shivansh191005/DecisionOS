@@ -2,7 +2,9 @@
 Pydantic v2 schemas for Module 8: Prescriptive Optimization & Goal-Seeking Engine.
 """
 from __future__ import annotations
+
 from typing import Any, Dict, List, Optional
+
 from pydantic import BaseModel, Field
 
 

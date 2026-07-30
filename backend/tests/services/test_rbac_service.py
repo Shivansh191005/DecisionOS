@@ -5,10 +5,10 @@ import pytest
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import ForbiddenException
+from app.models.user import User
 from app.repositories.org_repository import OrganizationRepository
 from app.services.rbac_service import RBACService
 from app.services.workspace_service import WorkspaceService
-from app.models.user import User
 
 
 @pytest.mark.asyncio
@@ -42,8 +42,9 @@ async def test_rbac_wildcard_and_domain_permissions(db_session: AsyncSession):
     assert viewer_role is not None
 
     # Replace user role mapping with Viewer
-    from app.models.organization import UserOrganizationRole
     from sqlalchemy import delete
+
+    from app.models.organization import UserOrganizationRole
 
     await db_session.execute(
         delete(UserOrganizationRole).where(

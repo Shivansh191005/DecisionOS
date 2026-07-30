@@ -4,16 +4,17 @@ Main FastAPI application initialization, CORS middleware, and error handlers.
 """
 from contextlib import asynccontextmanager
 from typing import Any, Dict
+
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+import app.models  # noqa: F401 - register models with SQLAlchemy metadata
 from app.api.v1.router import api_router
 from app.core.config import settings
 from app.core.exceptions import DecisionOSException
 from app.db.base import Base
 from app.db.session import engine
-import app.models  # noqa: F401 - register models with SQLAlchemy metadata
 
 
 @asynccontextmanager

@@ -1,8 +1,8 @@
 """
 Integration tests for Module 3: Data Cleaning, Imputation & Feature Engineering Studio.
 """
-import pytest
 import httpx
+import pytest
 from fastapi import status
 
 

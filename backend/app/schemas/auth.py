@@ -2,6 +2,7 @@
 Pydantic v2 schemas for authentication endpoints (Login, Register, Token rotation).
 """
 from typing import Optional
+
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 

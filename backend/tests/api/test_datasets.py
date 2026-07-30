@@ -1,8 +1,8 @@
 """
 Integration tests for Module 2: Data Ingestion & Pipelines (DuckDB OLAP & Automated Schema Profiler).
 """
-import pytest
 import httpx
+import pytest
 from fastapi import status
 
 

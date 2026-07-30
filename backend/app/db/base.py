@@ -3,6 +3,7 @@ SQLAlchemy 2.0 Declarative Base model with UUID primary key and timestamp mixins
 """
 import uuid
 from datetime import datetime, timezone
+
 from sqlalchemy import DateTime
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column

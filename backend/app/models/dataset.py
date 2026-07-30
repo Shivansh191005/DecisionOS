@@ -2,9 +2,10 @@
 Dataset Domain Entity for DecisionOS Module 2: Data Ingestion & Pipelines.
 Stores uploaded dataset metadata, DuckDB storage path, and inferred statistical schema profiles.
 """
+import uuid
 from enum import Enum as PyEnum
 from typing import Any, Dict, Optional
-import uuid
+
 from sqlalchemy import (
     BigInteger,
     ForeignKey,
@@ -15,7 +16,7 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import UUIDModel, TimestampMixin
+from app.db.base import TimestampMixin, UUIDModel
 
 
 class DatasetFileType(str, PyEnum):

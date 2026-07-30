@@ -3,6 +3,7 @@ Pytest fixtures and test database setup for DecisionOS backend test suite.
 """
 import asyncio
 from typing import AsyncGenerator
+
 import httpx
 import pytest
 import pytest_asyncio
@@ -10,9 +11,13 @@ from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.ext.compiler import compiles
 
+from app.core.config import settings
 from app.db.base import Base
 from app.db.session import get_db
 from app.main import app
+
+settings.ENVIRONMENT = "test"
+settings.GROQ_API_KEY = ""
 
 # Compile PostgreSQL UUID and JSONB types to SQLite for fast in-memory testing
 @compiles(UUID, "sqlite")

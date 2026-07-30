@@ -4,6 +4,7 @@ AuditLog and ActivityLog database models for enterprise security compliance and 
 import uuid
 from datetime import datetime
 from typing import Any, Dict, Optional
+
 from sqlalchemy import DateTime, ForeignKey, String, Text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship

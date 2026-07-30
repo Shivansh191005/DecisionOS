@@ -4,6 +4,7 @@ All queries are scoped by workspace_id to enforce multi-tenant isolation.
 """
 import uuid
 from typing import Any, Dict, Optional, Sequence
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 

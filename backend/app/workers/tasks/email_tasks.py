@@ -3,6 +3,7 @@ Asynchronous Celery tasks for sending notification emails and magic links.
 """
 import logging
 from typing import Any, Dict
+
 from app.workers.celery_app import celery_app
 
 logger = logging.getLogger("decisionos.workers.email")

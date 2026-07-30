@@ -3,6 +3,7 @@ RBAC Authorization Service for checking granular permission tags in DecisionOS.
 """
 import uuid
 from typing import Dict, List, Optional
+
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import ForbiddenException, NotFoundException

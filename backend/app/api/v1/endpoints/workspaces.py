@@ -3,6 +3,7 @@ Workspace REST API endpoints (/api/v1/workspaces/*).
 """
 import uuid
 from typing import List, Optional
+
 from fastapi import APIRouter, Depends, Header, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
 

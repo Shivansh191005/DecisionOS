@@ -3,8 +3,8 @@ Service layer for Module 6: NLQ-to-SQL (Natural Language to SQL Engine & AI Data
 """
 import re
 import time
-from typing import Any, Dict, List, Optional, Tuple
 import uuid
+from typing import Any, Dict, List, Optional, Tuple
 
 import duckdb
 from sqlalchemy import select

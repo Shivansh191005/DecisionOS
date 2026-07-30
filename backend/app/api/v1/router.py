@@ -2,19 +2,20 @@
 API v1 router combining all endpoint modules for DecisionOS.
 """
 from fastapi import APIRouter
+
 from app.api.v1.endpoints import (
     auth,
+    briefing,
     cleaning,
     datasets,
     eda,
     forecasting,
     nlq,
+    optimization,
     organizations,
     users,
     workspaces,
     xai,
-    optimization,
-    briefing,
 )
 
 api_router = APIRouter()

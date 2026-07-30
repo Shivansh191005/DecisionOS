@@ -3,9 +3,10 @@ FastAPI dependency injection for authentication and RBAC authorization.
 """
 import uuid
 from typing import Optional
+
+import jwt
 from fastapi import Depends, Header, Query
 from fastapi.security import OAuth2PasswordBearer
-import jwt
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings

@@ -4,6 +4,7 @@ Pydantic v2 schemas for Workspace and Activity Log serialization.
 import uuid
 from datetime import datetime
 from typing import Any, Dict, Optional
+
 from pydantic import BaseModel, ConfigDict, Field
 
 

@@ -4,6 +4,7 @@ Authentication Service handling registration, login, token rotation, and Google 
 import uuid
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional, Tuple
+
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings

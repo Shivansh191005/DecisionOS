@@ -1,8 +1,8 @@
 """
 REST API endpoints for Module 6: NLQ-to-SQL (Natural Language to SQL Engine & AI Data Assistant).
 """
-from typing import Any, List
 import uuid
+from typing import Any, List
 
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession

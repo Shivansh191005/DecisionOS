@@ -2,6 +2,7 @@
 Integration test suite for Module 8: Prescriptive Optimization & Goal-Seeking Engine.
 """
 import io
+
 import pytest
 from httpx import AsyncClient
 

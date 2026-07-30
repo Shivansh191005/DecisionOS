@@ -1,8 +1,8 @@
 """
 Integration tests for Module 4: Exploratory Data Analysis (EDA) & Auto-Insight Generator.
 """
-import pytest
 import httpx
+import pytest
 from fastapi import status
 
 

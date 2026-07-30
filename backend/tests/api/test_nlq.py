@@ -2,6 +2,7 @@
 Integration test suite for Module 6: NLQ-to-SQL (Natural Language to SQL Engine & AI Data Assistant).
 """
 import io
+
 import pytest
 from httpx import AsyncClient
 

@@ -5,8 +5,9 @@ automated schema profiling, DuckDB OLAP previews/queries, and file deletion.
 """
 import logging
 import os
-from typing import Any, Dict, List, Optional, Sequence
 import uuid
+from typing import Any, Dict, List, Optional, Sequence
+
 import aiofiles
 from fastapi import UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession

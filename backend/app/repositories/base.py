@@ -3,6 +3,7 @@ Generic asynchronous SQLAlchemy repository pattern base class.
 """
 import uuid
 from typing import Any, Dict, Generic, List, Optional, Sequence, Type, TypeVar
+
 from sqlalchemy import delete, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 

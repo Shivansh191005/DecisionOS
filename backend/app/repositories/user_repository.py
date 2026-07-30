@@ -3,6 +3,7 @@ User repository for database queries relating to User accounts and Refresh token
 """
 import uuid
 from typing import Optional
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 

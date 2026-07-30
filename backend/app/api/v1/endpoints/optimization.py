@@ -1,8 +1,8 @@
 """
 REST API endpoints for Module 8: Prescriptive Optimization & Goal-Seeking Engine.
 """
-from typing import Any
 import uuid
+from typing import Any
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -17,8 +17,8 @@ from app.schemas.optimization import (
     OptimizationResponse,
 )
 from app.services.dataset_service import DatasetService
-from app.services.workspace_service import WorkspaceService
 from app.services.optimization_service import OptimizationService
+from app.services.workspace_service import WorkspaceService
 
 router = APIRouter()
 

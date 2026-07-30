@@ -6,6 +6,7 @@ over uploaded CSV, JSON, Parquet, and Excel datasets without loading entire file
 import os
 import re
 from typing import Any, Dict, List, Optional
+
 import duckdb
 import pandas as pd
 
@@ -634,7 +635,6 @@ class DuckDBEngine:
         Identify anomalous rows using Tukey IQR (1.5*IQR) or Z-score (|z| > 3.0) boundaries.
         """
         stats = cls.compute_distribution_stats(file_path, file_type, column)
-        min_val = stats["min"]
         q1_val = stats["q1"]
         q3_val = stats["q3"]
         iqr_val = stats["iqr"]
@@ -732,7 +732,7 @@ class DuckDBEngine:
             agg_upper = agg_fn.upper() if agg_fn.upper() in valid_aggs else "SUM"
 
             sql = f"""
-            SELECT 
+            SELECT
                 strftime(date_trunc('{trunc_unit}', CAST("{date_column}" AS TIMESTAMP)), '%Y-%m-%d') AS period_date,
                 ROUND({agg_upper}(CAST("{target_column}" AS DOUBLE)), 4) AS target_value
             FROM {table_expr}

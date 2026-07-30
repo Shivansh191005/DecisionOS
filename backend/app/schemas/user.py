@@ -4,6 +4,7 @@ Pydantic v2 schemas for User account serialization.
 import uuid
 from datetime import datetime
 from typing import Optional
+
 from pydantic import BaseModel, ConfigDict, EmailStr
 
 

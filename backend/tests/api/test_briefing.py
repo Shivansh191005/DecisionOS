@@ -2,6 +2,7 @@
 Integration test suite for Module 9: AI Executive Co-Pilot & Decision Briefing Generator.
 """
 import io
+
 import pytest
 from httpx import AsyncClient
 

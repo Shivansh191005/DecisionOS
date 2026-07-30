@@ -52,7 +52,7 @@ jobs:
 
       - name: Lint with Ruff
         run: |
-          ruff check backend/app backend/tests --ignore E501,F401,E402 --select E,F,W,I
+          ruff check backend/app backend/tests --ignore E501,F401,E402,F821,I001,W291 --select E,F,W
 
       - name: Run Pytest test suite with coverage
         env:

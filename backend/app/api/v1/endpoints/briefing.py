@@ -1,8 +1,8 @@
 """
 REST API endpoints for Module 9: AI Executive Co-Pilot & Decision Briefing Generator.
 """
-from typing import Any
 import uuid
+from typing import Any
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession

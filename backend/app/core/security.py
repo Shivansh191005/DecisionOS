@@ -6,13 +6,13 @@ import hashlib
 import secrets
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, Optional
+
+import bcrypt
 import jwt
+import passlib.handlers.bcrypt
 from passlib.context import CryptContext
 
 from app.core.config import settings
-
-import bcrypt
-import passlib.handlers.bcrypt
 
 # Compatibility shim for bcrypt >= 4.0.0 with passlib 1.7.4
 if not hasattr(bcrypt, "__about__"):

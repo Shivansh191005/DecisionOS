@@ -1,8 +1,8 @@
 """
 Integration tests for authentication endpoints (/api/v1/auth/*).
 """
-import pytest
 import httpx
+import pytest
 from fastapi import status
 
 
