@@ -471,7 +471,7 @@ export default function CleaningStudioPage({ params }: CleaningStudioProps) {
                 <table className="w-full text-left text-xs text-slate-300">
                   <thead className="bg-slate-950 text-[11px] uppercase tracking-wider text-slate-400 border-b border-slate-800">
                     <tr>
-                      {previewMutation.data?.columns.map((colName) => (
+                      {previewMutation.data?.columns.map((colName: string) => (
                         <th key={colName} className="px-4 py-3 font-semibold">
                           {colName}
                         </th>
@@ -479,12 +479,12 @@ export default function CleaningStudioPage({ params }: CleaningStudioProps) {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800/60 bg-slate-900/20">
-                    {previewMutation.data?.rows.map((row, rowIdx) => (
+                    {previewMutation.data?.rows.map((row: Record<string, any>, rowIdx: number) => (
                       <tr
                         key={rowIdx}
                         className="hover:bg-slate-800/40 transition-colors"
                       >
-                        {previewMutation.data?.columns.map((colName) => (
+                        {previewMutation.data?.columns.map((colName: string) => (
                           <td key={colName} className="px-4 py-2.5 font-mono">
                             {row[colName] !== null && row[colName] !== undefined
                               ? String(row[colName])
