@@ -56,6 +56,7 @@ class Settings(BaseSettings):
     # AI & ML
     OPENAI_API_KEY: str = ""
     GEMINI_API_KEY: str = ""
+    GROQ_API_KEY: str = ""
 
     # Data Storage & Ingestion
     STORAGE_DIR: str = "./storage/datasets"

@@ -15,6 +15,7 @@ from app.models.dataset import Dataset
 from app.models.nlq import NLQBookmark
 from app.schemas.nlq import NLQAskResponse, NLQBookmarkResponse
 from app.services.duckdb_engine import DuckDBEngine
+from app.services.llm_service import LLMService
 
 
 class NLQService:
@@ -318,15 +319,24 @@ class NLQService:
 
         # 5. Determine Chart & AI Answer
         chart_type = self._recommend_chart_type(columns, rows, group_type)
-        ai_answer = self._synthesize_ai_answer(
+
+        # Try high-speed Groq Llama-3.3-70B first, fallback to local rule engine
+        ai_answer = await LLMService.generate_nlq_answer(
             question=question,
+            sql_query=sql_query,
             columns=columns,
-            rows=rows,
-            group_type=group_type,
-            target_col=target_col,
-            agg_fn=agg_fn,
-            chart_type=chart_type,
+            sample_results=rows,
         )
+        if not ai_answer:
+            ai_answer = self._synthesize_ai_answer(
+                question=question,
+                columns=columns,
+                rows=rows,
+                group_type=group_type,
+                target_col=target_col,
+                agg_fn=agg_fn,
+                chart_type=chart_type,
+            )
 
         return NLQAskResponse(
             question=question,

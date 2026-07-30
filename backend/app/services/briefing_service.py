@@ -19,6 +19,7 @@ from app.schemas.briefing import (
     BriefingSection,
 )
 from app.services.duckdb_engine import DuckDBEngine
+from app.services.llm_service import LLMService
 
 
 class BriefingService:
@@ -305,6 +306,19 @@ class BriefingService:
 
         conn = duckdb.connect(database=":memory:", read_only=False)
         try:
+            # 1. Try High-Speed Groq Llama 3.3 70B
+            groq_ans = await LLMService.answer_briefing_qna(
+                question=request.question,
+                dataset_name=dataset.name,
+                context_text=f"Target Metric: {target_col}\nFile: {dataset.name}",
+            )
+            if groq_ans:
+                return BriefingQnaResponse(
+                    question=request.question,
+                    answer_text=groq_ans,
+                    supporting_metric=f"Groq Llama-3.3-70B Analysis on {target_col}",
+                    confidence_score=98.5,
+                )
             if any(k in q_lower for k in ["growth", "driver", "top", "lead"]):
                 try:
                     desc = conn.execute(f"DESCRIBE SELECT * FROM {table_expr}").fetchall()
